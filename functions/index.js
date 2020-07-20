@@ -1,7 +1,14 @@
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 const express = require('express')
-admin.initializeApp()
+
+const firebase = admin.initializeApp({
+  apiKey: 'AIzaSyA1f7LYGv-fVuIt57UxjKZmSR-5hbgYqVA',
+  authDomain: 'gift-y.firebaseapp.com',
+  databaseURL: `https://gift-y.firebaseio.com/`,
+  projectId: 'gift-y',
+})
+
 const { ApolloServer, gql } = require('apollo-server-express')
 
 // // Create and Deploy Your First Cloud Functions
@@ -16,16 +23,16 @@ const typeDefs = gql`
   type Group {
     id: Int
     members: [User]
-    created_date: Date
+    created_String: String
     name: String
     description: String
   }
   type Event {
     id: Int
     name: String
-    group: Group
-    created_date: Date
-    event_date: Date
+    group: [Group]
+    created_String: String
+    event_String: String
     isGroupEvent: Boolean
     gift_receiver: Int
   }
@@ -39,6 +46,7 @@ const typeDefs = gql`
     received_items: [Item]
     purchased_items: [Item]
   }
+
   type Item {
     id: Int
     image: String
@@ -47,10 +55,10 @@ const typeDefs = gql`
     link: String
     description: String
     created_by: Int
-    created_date: Date
+    created_String: String
     flags: [Flag]
     purchased_by: Int
-    purchased_date: Date
+    purchased_String: String
   }
   type Flag {
     title: String

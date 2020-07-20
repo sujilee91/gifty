@@ -1,0 +1,12 @@
+import React from 'react'
+import { useStyles } from '../useStyles'
+import Typography from '@material-ui/core/Typography'
+
+export const PageTitle = ({ title }) => {
+  const classes = useStyles()
+  return (
+    <div className={classes.pageTitle}>
+      <Typography variant="h4">{title}</Typography>
+    </div>
+  )
+}
