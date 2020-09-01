@@ -4,12 +4,19 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
+  bodyWrapper: {
+    margin: 'auto',
+    maxWidth: '1100px',
+    paddingTop: '30px',
+  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  span: {
     marginLeft: theme.typography.pxToRem(20),
   },
   list: {
@@ -70,8 +77,8 @@ export const useStyles = makeStyles((theme) => ({
     paddingBottom: '0 !important',
   },
   itemAvatar: {
-    height: '30px !important',
-    width: '30px !important',
+    height: '35px !important',
+    width: '35px !important',
   },
   itemInfoTitle: {
     padding: '0 0 15px 15px',
@@ -105,6 +112,9 @@ export const useStyles = makeStyles((theme) => ({
       borderLeft: 'solid 1px #e7ecf4',
     },
   },
+  title: {
+    fontFamily: 'Roboto',
+  },
   pageTitle: {
     margin: '20px',
     textAlign: 'left',
@@ -132,12 +142,51 @@ export const useStyles = makeStyles((theme) => ({
   },
   userAction: {
     marginTop: '15px',
-    position: 'absolute',
     bottom: 0,
   },
   userProfileImage: {
     width: '160px',
     height: '160px',
     borderRadius: '50%',
+  },
+
+  routerWrapper: {
+    background: 'white',
+    zIndex: '99',
+    top: '0px',
+    position: 'absolute',
+    width: '250px',
+    height: '100%',
+    boxShadow:
+      '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)',
+  },
+
+  sideMenuWrapper: {
+    left: '0',
+    maxWidth: '250px',
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: '20px',
+    fontFamily: 'Raleway',
+  },
+
+  link: {
+    textDecoration: 'none',
+    cursor: 'pointer',
+    padding: '20px 45px',
+    color: '#1B9773',
+    textAlign: 'left',
+  },
+
+  appLogo: {
+    width: '100px',
+    margin: 'auto',
+    marginBottom: '20px',
+    cursor: 'pointer',
+  },
+
+  selected: {
+    background: '#1B9773',
+    color: 'white',
   },
 }))

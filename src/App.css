@@ -24,10 +24,14 @@
 }
 
 .Body {
-  max-width: 1100px;
-  margin: auto;
+  height: 100vh;
+  top: -20px;
+  position: relative;
+  background: #f9f9f9;
 }
 
+/* max-width: 1100px;
+margin: auto; */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

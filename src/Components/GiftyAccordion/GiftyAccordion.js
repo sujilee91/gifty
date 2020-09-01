@@ -39,7 +39,7 @@ export const GiftyAccordion = ({ user, expanded, setExpanded }) => {
           <Avatar>{getNameAvatar(user.name)}</Avatar>
         )}
         <Typography fontFamily="Roboto" className={classes.heading}>
-          {user.name}
+          <span className={classes.span}>{user.name}</span>
         </Typography>
       </AccordionSummary>
       <AccordionDetails className={classes.accordionDetails}>

@@ -5,6 +5,9 @@ import Card from '@material-ui/core/Card'
 import { useStyles } from '../../useStyles'
 import { mockGroup } from './mocks'
 import { PageTitle } from '../../Components/PageTitle'
+import Divider from '@material-ui/core/Divider'
+import AccordionActions from '@material-ui/core/AccordionActions'
+import Button from '@material-ui/core/Button'
 
 export const Groups = ({}) => {
   const classes = useStyles()
@@ -18,6 +21,12 @@ export const Groups = ({}) => {
         return (
           <Card raised={false} className={classes.card}>
             <GroupTitle group={group} />
+            <AccordionActions>
+              {/* <Button size="small">Edit Group</Button> */}
+              <Button size="small" color="primary">
+                Edit Group
+              </Button>
+            </AccordionActions>
             {users.map((user) => (
               <GiftyAccordion
                 user={user}

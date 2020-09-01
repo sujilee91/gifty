@@ -1,9 +1,7 @@
 import React from 'react'
 import './App.css'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import logo from './gifty.png'
-import { Groups } from './Pages/Groups/Groups'
-import { User } from './Pages/User/User'
+import { Menu } from './Components/Menu'
 
 function App() {
   const theme = createMuiTheme({
@@ -21,19 +19,21 @@ function App() {
         main: '#ab003c',
       },
     },
+    typography: {
+      fontFamily: 'Roboto',
+    },
   })
+
+  theme.typography.h4 = {
+    fontFamily: 'Roboto',
+    fontSize: '2.125rem',
+    fontWeight: '300',
+  }
 
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="App">
-        <div className="Header">
-          <img className="App-logo" src={logo} alt="logo" />
-        </div>
-        <div className="Body">
-          <Groups />
-          <User />
-        </div>
-      </div>
+      <Menu />
+      <div className="App"></div>
     </MuiThemeProvider>
   )
 }
