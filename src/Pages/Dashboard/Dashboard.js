@@ -4,6 +4,8 @@ import {
   wishlistListner,
 } from '../../FirebaseFunctions/wishlist'
 import { ItemTable } from '../../Components/ItemTable'
+import { PageTitle } from '../../Components/PageTitle'
+import { SectionTitle } from '../../Components/SectionTitle'
 const fakeAccountKey = '6969696'
 
 export const Dashboard = () => {
@@ -15,20 +17,14 @@ export const Dashboard = () => {
 
   console.log('$$$ - Dahsboard - wishlist', wishlist)
   return (
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
+    <>
+      <PageTitle title="Dashboard" />
+      <SectionTitle title="Items" />
       <ItemTable />
       <span>Wishlist</span>
       <button onClick={() => addItemToWishlist(fakeAccountKey)}>
         Add Wishlist Item
       </button>
-    </div>
+    </>
   )
 }

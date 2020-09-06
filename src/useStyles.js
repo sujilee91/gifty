@@ -6,8 +6,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   bodyWrapper: {
     margin: 'auto',
-    maxWidth: '1100px',
+    maxWidth: '1300px',
     paddingTop: '30px',
+    marginLeft: '300px',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

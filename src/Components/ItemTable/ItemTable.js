@@ -5,6 +5,10 @@ import {
   wishlistListner,
 } from '../../FirebaseFunctions/wishlist'
 import { ItemColumn } from './ItemColumn'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import { ActionButton } from './ActionButton'
+
 const fakeAccountKey = '6969696'
 
 export const ItemTable = () => {
@@ -20,10 +24,11 @@ export const ItemTable = () => {
       <thead>
         <tr className={classes.thead}>
           <th className={classes.th}>Item</th>
+          <th className={classes.th}>Status</th>
           <th className={classes.th}>Price</th>
           <th className={classes.th}>Description</th>
           <th className={classes.th}>Date</th>
-          <th width={6} />
+          <th className={classes.actionTh} />
         </tr>
       </thead>
       <tbody className={classes.tbody}>
@@ -42,30 +47,17 @@ export const ItemTable = () => {
               <td className={classes.itemTd}>
                 <ItemColumn item={{ name: name, link: link }} />
               </td>
-              <td>{price}</td>
-              <td>{description}</td>
-              <td>d</td>
-              <td></td>
+              <td className={classes.td}>√</td>
+              <td className={classes.priceTd}>$ {price.toFixed(2)}</td>
+              <td className={classes.descriptionTd}>{description}</td>
+              <td className={classes.td}>d</td>
+              <td className={classes.td}>
+                <ActionButton />
+              </td>
             </tr>
           )
         })}
       </tbody>
     </table>
   )
-}
-
-{
-  /* <div
-style={{
-  height: 'auto',
-  width: '200px',
-  border: '1px solid grey',
-}}
->
-<a target="_blank" href={link}>
-  <h1>Name: {name}</h1>
-</a>
-<code>price: {price}</code>
-<p>description: {description} </p>
-</div> */
 }

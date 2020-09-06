@@ -2,13 +2,16 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   table: {
-    width: '100%',
     fontFamily: 'Raleway',
     borderSpacking: '0px',
     borderCollapse: 'collapse',
+    margin: '20px',
   },
 
-  thead: {},
+  thead: {
+    background: '#1b9773',
+    color: 'white',
+  },
 
   th: {
     textAlign: 'left',
@@ -24,7 +27,21 @@ export const useStyles = makeStyles((theme) => ({
 
   itemTd: {
     width: '55%',
-    padding: '20px',
+    padding: '10px 20px',
+  },
+
+  td: {
+    padding: '10px 20px',
+  },
+
+  priceTd: {
+    width: '12%',
+    padding: '10px 20px',
+  },
+
+  descriptionTd: {
+    width: '25%',
+    padding: '10px 20px',
   },
 
   tbody: {
@@ -54,5 +71,16 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     fontSize: '13px',
     color: '#9b9b9b',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: '460px',
+  },
+
+  itemTitle: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: '460px',
   },
 }))
