@@ -15,6 +15,7 @@ export const User = ({}) => {
       <SectionTitle title="Profile" />
       <UserCard />
       <SectionTitle title="Items" />
+      <div></div>
     </>
   )
 }

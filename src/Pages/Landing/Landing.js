@@ -4,5 +4,5 @@ import { useStyles } from '../useStyles'
 export const Landing = () => {
   const classes = useStyles()
 
-  return <Warpper></Warpper>
+  return <div className={classes.landingWrapper}></div>
 }
