@@ -4,10 +4,16 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
+  Body: {
+    height: '100vh',
+    position: 'relative',
+    background: '#f9f9f9',
+  },
   bodyWrapper: {
     margin: 'auto',
-    maxWidth: '1100px',
+    maxWidth: '1300px',
     paddingTop: '30px',
+    marginLeft: '300px',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -21,6 +27,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   list: {
     width: 300,
+    fontFamily: 'Raleway',
   },
   fullList: {
     width: 'auto',
@@ -28,10 +35,14 @@ export const useStyles = makeStyles((theme) => ({
   listHeader: {
     padding: theme.typography.pxToRem(15),
     borderBottom: `1px solid #e0e0e0`,
+    '& h3': {
+      margin: '5px 0',
+    },
   },
   listFooter: {
     position: 'sticky',
     bottom: 0,
+    width: '100%',
   },
   listFooterButton: {
     width: '100%',
@@ -40,7 +51,7 @@ export const useStyles = makeStyles((theme) => ({
     height: '50px',
   },
   listBody: {
-    height: 'calc( 100vh - 109px) ',
+    minHeight: 'calc( 100vh - 113px)',
   },
   itemImageWrapper: {
     padding: '15px',
@@ -83,7 +94,10 @@ export const useStyles = makeStyles((theme) => ({
   itemInfoTitle: {
     padding: '0 0 15px 15px',
     display: 'flex',
-    alignItems: 'center;',
+    alignItems: 'center',
+    '& h6': {
+      fontSize: '18px',
+    },
   },
   linkIcon: {
     marginLeft: '15px',
@@ -176,6 +190,20 @@ export const useStyles = makeStyles((theme) => ({
     padding: '20px 45px',
     color: '#1B9773',
     textAlign: 'left',
+  },
+
+  logout: {
+    textDecoration: 'none',
+    cursor: 'pointer',
+    padding: '20px 45px',
+    color: '#1B9773',
+    textAlign: 'left',
+    position: 'absolute',
+    bottom: '0',
+    background: '#eff7f5',
+    width: '-webkit-fill-available',
+    display: 'flex',
+    justifyContent: 'space-between',
   },
 
   appLogo: {

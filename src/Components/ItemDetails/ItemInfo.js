@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStyles } from '../../../useStyles'
+import { useStyles } from '../../useStyles'
 import Typography from '@material-ui/core/Typography'
 import LinkIcon from '@material-ui/icons/Link'
 import IconButton from '@material-ui/core/IconButton'

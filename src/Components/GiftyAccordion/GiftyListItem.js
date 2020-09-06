@@ -7,7 +7,7 @@ import ImageIcon from '@material-ui/icons/Image'
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import DoneIcon from '@material-ui/icons/Done'
 import Drawer from '@material-ui/core/Drawer'
-import { ItemDetails } from './ItemDetails/ItemDetails'
+import { ItemDetails } from '../ItemDetails'
 import { Typography } from '@material-ui/core'
 import { useStyles } from '../../useStyles'
 //show dialog OR sidebar of item details on click

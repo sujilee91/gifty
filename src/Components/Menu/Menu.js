@@ -10,7 +10,8 @@ import logo from '../../gifty.png'
 import { Groups } from '../../Pages/Groups/Groups'
 import { User } from '../../Pages/User/User'
 import { Dashboard } from '../../Pages/Dashboard'
-
+import { logout } from '../../FirebaseFunctions/auth'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 export const Menu = () => {
   const classes = useStyles()
   return (
@@ -45,26 +46,30 @@ export const Menu = () => {
             >
               Profile
             </NavLink>
+            <div className={classes.logout} onClick={logout}>
+              Logout
+              <ArrowForwardIcon />
+            </div>
           </div>
         </div>
         <Switch>
           <Route exact path="/"></Route>
           <Route exact path="/dashboard">
-            <div className="Body">
+            <div className={classes.Body}>
               <div className={classes.bodyWrapper}>
                 <Dashboard />
               </div>
             </div>
           </Route>
           <Route exact path="/groups">
-            <div className="Body">
+            <div className={classes.Body}>
               <div className={classes.bodyWrapper}>
                 <Groups />
               </div>
             </div>
           </Route>
           <Route path="/user">
-            <div className="Body">
+            <div className={classes.Body}>
               <div className={classes.bodyWrapper}>
                 <User />
               </div>
