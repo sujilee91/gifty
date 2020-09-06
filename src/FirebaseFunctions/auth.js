@@ -11,13 +11,9 @@ import fire from "../fire";
 // in firebase. For example, getMessages is initialized, and calls updateMessages whenever
 // there is a change in data.
 
-export const authListener = () => {
+export const authListener = (callback) => {
   fire.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log("USER! - ", user);
-    } else {
-      console.log("NO USER!!!");
-    }
+    callback(user);
   });
 };
 
@@ -32,4 +28,8 @@ export const loginWithGoogle = () => {
     .catch((error) => {
       console.log("GOOGLE SIGNUP FAIL", error);
     });
+};
+
+export const logout = () => {
+  fire.auth().signOut();
 };

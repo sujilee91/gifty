@@ -4,6 +4,11 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
+  Body: {
+    height: '100vh',
+    position: 'relative',
+    background: '#f9f9f9',
+  },
   bodyWrapper: {
     margin: 'auto',
     maxWidth: '1300px',
@@ -177,6 +182,20 @@ export const useStyles = makeStyles((theme) => ({
     padding: '20px 45px',
     color: '#1B9773',
     textAlign: 'left',
+  },
+
+  logout: {
+    textDecoration: 'none',
+    cursor: 'pointer',
+    padding: '20px 45px',
+    color: '#1B9773',
+    textAlign: 'left',
+    position: 'absolute',
+    bottom: '0',
+    background: '#eff7f5',
+    width: '-webkit-fill-available',
+    display: 'flex',
+    justifyContent: 'space-between',
   },
 
   appLogo: {

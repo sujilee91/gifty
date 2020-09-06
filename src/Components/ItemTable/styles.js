@@ -23,6 +23,8 @@ export const useStyles = makeStyles((theme) => ({
       background: '#eff7f5',
     },
     borderBottom: '1px solid #f2f2f2',
+    borderRight: '1px solid #f2f2f2',
+    borderLeft: '1px solid #f2f2f2',
   },
 
   itemTd: {
