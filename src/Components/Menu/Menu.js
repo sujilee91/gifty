@@ -1,18 +1,19 @@
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
-} from 'react-router-dom'
-import { useStyles } from '../../useStyles'
-import logo from '../../gifty.png'
-import { Groups } from '../../Pages/Groups/Groups'
-import { User } from '../../Pages/User/User'
-import { Dashboard } from '../../Pages/Dashboard'
+} from "react-router-dom";
+import { useStyles } from "../../useStyles";
+import logo from "../../gifty.png";
+import { Groups } from "../../Pages/Groups/Groups";
+import { User } from "../../Pages/User/User";
+import { Dashboard } from "../../Pages/Dashboard";
+import { logout } from "../../FirebaseFunctions/auth";
 
 export const Menu = () => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <div>
       <Router>
@@ -22,7 +23,7 @@ export const Menu = () => {
               className={classes.appLogo}
               src={logo}
               alt="logo"
-              onClick={() => window.location.assign('/')}
+              onClick={() => window.location.assign("/")}
             />
             <NavLink
               to="/dashboard"
@@ -45,6 +46,9 @@ export const Menu = () => {
             >
               Profile
             </NavLink>
+            <div className={classes.link} onClick={logout}>
+              Logout
+            </div>
           </div>
         </div>
         <Switch>
@@ -73,5 +77,5 @@ export const Menu = () => {
         </Switch>
       </Router>
     </div>
-  )
-}
+  );
+};
