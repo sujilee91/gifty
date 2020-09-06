@@ -12,6 +12,20 @@ const fakeWishlistItem = {
   purchased_by: null,
 };
 
+export const wishlistListner = (accountKey, callback) => {
+  fire
+    .database()
+    .ref(`${accountKey}/wishlist`)
+    .on("value", (snap) => {
+      const portfoliosObject = {};
+      snap.forEach((portfolio) => {
+        const portfolioObject = portfolio.val();
+        portfoliosObject[portfolio.key] = portfolioObject;
+      });
+      callback(portfoliosObject);
+    });
+};
+
 export const addItemToWishlist = (
   accountKey,
   wishlistItem = fakeWishlistItem
@@ -25,16 +39,23 @@ export const addItemToWishlist = (
     });
 };
 
-export const wishlistListner = (accountKey, callback) => {
+export const editWishlistItem = ({
+  accountKey,
+  wishlistKey,
+  updatedObject,
+}) => {
+  console.log(
+    "editWishlistItem ACTION:  accountKey, wishlistKey, updatedObject",
+    accountKey,
+    wishlistKey,
+    updatedObject
+  );
   fire
     .database()
-    .ref(`${accountKey}/wishlist`)
-    .on("value", (snap) => {
-      const portfoliosObject = {};
-      snap.forEach((portfolio) => {
-        const portfolioObject = portfolio.val();
-        portfoliosObject[portfolio.key] = portfolioObject;
-      });
-      callback(portfoliosObject);
+    .ref(`${accountKey}/wishlist/`)
+    .child(wishlistKey)
+    .update(updatedObject)
+    .catch((error) => {
+      console.log("Edit Wishlist Item ERROR!@!!");
     });
 };
