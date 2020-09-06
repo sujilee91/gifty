@@ -189,4 +189,20 @@ export const useStyles = makeStyles((theme) => ({
     background: '#1B9773',
     color: 'white',
   },
+
+  dashWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '20px',
+  },
+
+  dashCard: {
+    padding: '20px',
+    maxWidth: '450px',
+    minWidth: '200px',
+  },
+
+  dashTitle: {
+    fontFamily: 'Raleway',
+  },
 }))
