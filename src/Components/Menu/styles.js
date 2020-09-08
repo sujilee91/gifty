@@ -7,7 +7,8 @@ export const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   Body: {
-    height: '100vh',
+    height: '100%',
+    minHeight: '100vh',
     position: 'relative',
     background: '#f9f9f9',
     padding: '0px 30px 0px 100px',

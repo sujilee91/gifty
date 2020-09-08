@@ -6,7 +6,6 @@ import {
   NavLink,
 } from 'react-router-dom'
 import { useStyles } from './styles'
-import logo from '../../gifty.png'
 import { Groups } from '../../Pages/Groups/Groups'
 import { User } from '../../Pages/User/User'
 import { Dashboard } from '../../Pages/Dashboard'
