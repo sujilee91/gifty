@@ -1,20 +1,13 @@
-import React from "react";
-import { loginWithGoogle } from "../../FirebaseFunctions/auth";
-
+import React from 'react'
+import { loginWithGoogle } from '../../FirebaseFunctions/auth'
+import { useStyles } from '../styles'
 const Login = () => {
+  const classes = useStyles()
   return (
-    <div
-      style={{
-        height: "100vh",
-        with: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className={classes.loginWrapper}>
       <button onClick={loginWithGoogle}>Log in With Google SON</button>
     </div>
-  );
-};
+  )
+}
 
-export { Login };
+export { Login }

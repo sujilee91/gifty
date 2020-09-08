@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import { useStyles } from '../useStyles'
+import { useStyles } from './styles'
 import EditIcon from '@material-ui/icons/Edit'
 
 export const UserCard = ({ user }) => {

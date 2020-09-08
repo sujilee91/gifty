@@ -9,7 +9,7 @@ import DoneIcon from '@material-ui/icons/Done'
 import Drawer from '@material-ui/core/Drawer'
 import { ItemDetails } from '../ItemDetails'
 import { Typography } from '@material-ui/core'
-import { useStyles } from '../../useStyles'
+import { useStyles } from './styles'
 //show dialog OR sidebar of item details on click
 export const GiftyListItem = ({ item }) => {
   const classes = useStyles()
@@ -58,7 +58,11 @@ export const GiftyListItem = ({ item }) => {
           </Avatar>
         )}
       </ListItemAvatar>
-      <ListItemText primary={item.title} secondary={item.description} />
+      <ListItemText
+        className={classes.itemList}
+        primary={item.title}
+        secondary={item.description}
+      />
       <ListItemSecondaryAction>
         {itemPickStatus(item.hasPicked, item.pickedBy, item.price)}
       </ListItemSecondaryAction>

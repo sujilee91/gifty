@@ -2,7 +2,7 @@ import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import AvatarGroup from '@material-ui/lab/AvatarGroup'
 import Typography from '@material-ui/core/Typography'
-import { useStyles } from '../useStyles'
+import { useStyles } from './styles'
 export const GroupTitle = ({ group }) => {
   const classes = useStyles()
   return (

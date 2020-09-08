@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme) => ({
     borderSpacking: '0px',
     borderCollapse: 'collapse',
     margin: '20px',
+    marginTop: '0px',
   },
 
   thead: {

@@ -5,52 +5,66 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom'
-import { useStyles } from '../../useStyles'
+import { useStyles } from './styles'
 import logo from '../../gifty.png'
 import { Groups } from '../../Pages/Groups/Groups'
 import { User } from '../../Pages/User/User'
 import { Dashboard } from '../../Pages/Dashboard'
 import { logout } from '../../FirebaseFunctions/auth'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import EqualizerIcon from '@material-ui/icons/Equalizer'
+import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline'
+import FaceIcon from '@material-ui/icons/Face'
+
 export const Menu = () => {
   const classes = useStyles()
   return (
     <div>
       <Router>
         <div className={classes.routerWrapper}>
-          <div className={classes.sideMenuWrapper}>
-            <img
+          <aside className={classes.sideMenuWrapper}>
+            <section
               className={classes.appLogo}
-              src={logo}
-              alt="logo"
               onClick={() => window.location.assign('/')}
             />
+
             <NavLink
               to="/dashboard"
               className={classes.link}
               activeClassName={classes.selected}
             >
-              Dashboard
+              <div>
+                <EqualizerIcon />
+                <span>Dashboard</span>
+              </div>
             </NavLink>
             <NavLink
               to="/groups"
               className={classes.link}
               activeClassName={classes.selected}
             >
-              Groups
+              <div>
+                <PeopleOutlineIcon />
+                <span>Groups</span>
+              </div>
             </NavLink>
             <NavLink
               to="/user"
               className={classes.link}
               activeClassName={classes.selected}
             >
-              Profile
+              <div>
+                <FaceIcon />
+                <span>Profile</span>
+              </div>
             </NavLink>
-            <div className={classes.logout} onClick={logout}>
-              Logout
-              <ArrowForwardIcon />
-            </div>
-          </div>
+            <a className={classes.logout} onClick={logout}>
+              <div>
+                <span>Logout</span>
+                <ExitToAppIcon />
+              </div>
+            </a>
+          </aside>
         </div>
         <Switch>
           <Route exact path="/"></Route>

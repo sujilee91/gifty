@@ -6,10 +6,12 @@ import {
 import { ItemTable } from '../../Components/ItemTable'
 import { PageTitle } from '../../Components/PageTitle'
 import { SectionTitle } from '../../Components/SectionTitle'
-import { useStyles } from '../../useStyles'
-import Card from '@material-ui/core/Card'
+import { useStyles } from '../styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+import recieve from './recieve.png'
+import sent from './sent.png'
+import spent from './spent.png'
 
 const fakeAccountKey = '6969696'
 
@@ -28,41 +30,37 @@ export const Dashboard = () => {
       <PageTitle title="Dashboard" />
       <div className={classes.dashWrapper}>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={3} lg={3}>
-            <Card raised={false} className={classes.dashCard}>
-              Word of the Day
-              <Typography
-                className={classes.dashTitle}
-                gutterBottom
-              ></Typography>
-            </Card>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
+            <div className={classes.dashCard}>
+              <img className={classes.dashImage} src={recieve} />
+              <Typography className={classes.dashTitle} gutterBottom>
+                Recieved items
+              </Typography>
+            </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={3} lg={3}>
-            <Card raised={false} className={classes.dashCard}>
-              Word of the Day
-              <Typography
-                className={classes.dashTitle}
-                gutterBottom
-              ></Typography>
-            </Card>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
+            <div className={classes.dashCard}>
+              <img className={classes.dashImage} src={sent} />
+              <Typography className={classes.dashTitle} gutterBottom>
+                Recieved items
+              </Typography>
+            </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={3} lg={3}>
-            <Card raised={false} className={classes.dashCard}>
-              Word of the Day
-              <Typography
-                className={classes.dashTitle}
-                gutterBottom
-              ></Typography>
-            </Card>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
+            <div className={classes.dashCard}>
+              <img className={classes.dashImage} src={spent} />
+              <Typography className={classes.dashTitle} gutterBottom>
+                Recieved items
+              </Typography>
+            </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={3} lg={3}>
-            <Card raised={false} className={classes.dashCard}>
-              Word of the Day
-              <Typography
-                className={classes.dashTitle}
-                gutterBottom
-              ></Typography>
-            </Card>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
+            <div className={classes.dashCard}>
+              <img className={classes.dashImage} src={recieve} />
+              <Typography className={classes.dashTitle} gutterBottom>
+                Recieved items
+              </Typography>
+            </div>
           </Grid>
         </Grid>
       </div>

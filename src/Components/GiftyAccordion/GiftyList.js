@@ -1,7 +1,7 @@
 import React from 'react'
 import List from '@material-ui/core/List'
 import { GiftyListItem } from './GiftyListItem'
-import { useStyles } from '../../useStyles'
+import { useStyles } from './styles'
 
 export const GiftyList = ({ items }) => {
   const classes = useStyles()

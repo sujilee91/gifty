@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useStyles } from '../../useStyles'
+import { useStyles } from './styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Avatar from '@material-ui/core/Avatar'
 import ImageIcon from '@material-ui/icons/Image'
 import { ItemInfo } from './ItemInfo'
 
-export const ItemDetails = ({ item, onClick }) => {
+export const ItemDetails = ({ item, onClick, buttoLabel }) => {
   const classes = useStyles()
   const isPickedItem = item.hasPicked && item.pickedBy !== '0001'
   const isItemPickedByUser = item.hasPicked && item.pickedBy === '0001'
@@ -48,7 +48,10 @@ export const ItemDetails = ({ item, onClick }) => {
           containedSizeLarge
           fullWidth
           disabled={isPickedItem}
-          onClick={onClick}
+          onClick={(e) => {
+            e.preventDefault()
+            onClick()
+          }}
         >
           {isPickedItem
             ? 'Item has already picked'

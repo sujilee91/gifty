@@ -8,7 +8,8 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import AddIcon from '@material-ui/icons/Add'
-
+import Badge from '@material-ui/core/Badge'
+import DoneOutlineIcon from '@material-ui/icons/DoneOutline'
 const fakeAccountKey = '6969696'
 
 export const ItemList = () => {
@@ -22,7 +23,7 @@ export const ItemList = () => {
   return (
     <div className={classes.itemsWrapper}>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={12} md={4} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}>
           <div className={classes.addButtonWrapper}>
             <AddIcon
               style={{ color: '#1b9773', height: '45px', width: '45px' }}
@@ -40,7 +41,13 @@ export const ItemList = () => {
             created_by,
           } = wishListItem
           return (
-            <Grid item xs={12} sm={12} md={4} lg={4}>
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <Badge
+                color="primary"
+                badgeContent={<DoneOutlineIcon />}
+                overlap="circle"
+                className={classes.badge}
+              />
               <Paper className={classes.paper}>
                 <img
                   className={classes.image}

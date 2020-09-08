@@ -31,12 +31,19 @@ export const useStyles = makeStyles((theme) => ({
   addButton: {
     minWidth: '100%',
     minHeight: '100%',
+    cursor: 'pointer',
   },
 
   itemWrapper: {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
+  },
+
+  itemList: {
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    marginRight: '50px',
   },
 
   itemImg: {
@@ -65,5 +72,14 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: '13px',
     color: '#9b9b9b',
     maxWidth: '460px',
+  },
+
+  badge: {
+    display: 'inline',
+    '& .MuiBadge-badge': {
+      height: '40px',
+      width: '40px',
+      borderRadius: '50%',
+    },
   },
 }))
