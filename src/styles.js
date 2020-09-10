@@ -13,6 +13,20 @@ export const useStyles = makeStyles((theme) => ({
     background: '#f9f9f9',
     padding: '0px 30px 0px 100px',
   },
+  routerWrapper: {
+    background: 'white',
+    zIndex: '99',
+    top: '0px',
+    position: 'absolute',
+    width: '80px',
+    height: '100%',
+    boxShadow:
+      '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)',
+    '&:hover': {
+      width: '250px',
+    },
+    transition: 'width 0.05s linear',
+  },
   selected: {
     background: '#1B9773',
     color: 'white !important',
@@ -22,24 +36,12 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   sideMenuWrapper: {
-    zIndex: '99',
-    top: '0px',
-    position: 'absolute',
-    width: '80px',
-    height: '100%',
-    '&:hover': {
-      width: '250px',
-    },
-    background: 'white',
-    boxShadow:
-      '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)',
-    transition: 'width 0.05s linear',
     left: '0',
     display: 'flex',
     flexDirection: 'column',
     fontFamily: 'Raleway',
     height: '100%',
-    position: 'fixed',
+
     '& a div span': {
       display: 'none',
     },
@@ -48,9 +50,6 @@ export const useStyles = makeStyles((theme) => ({
       width: '250px',
       '& a div span': {
         display: 'block',
-      },
-      '& a': {
-        width: '194px',
       },
       '& section': {
         backgroundImage: `url(${fullLogo})`,
@@ -67,8 +66,6 @@ export const useStyles = makeStyles((theme) => ({
     padding: '20px 28px',
     color: '#1B9773',
     textAlign: 'left',
-    width: '24px',
-    transition: 'width 0.05s linear',
 
     '& div': {
       display: 'flex',
@@ -97,13 +94,10 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '24px',
-    transition: 'width 0.05s linear',
 
     '&:hover': {
       background: '#1B9773',
       color: 'white',
-      width: '194px',
     },
 
     '& div': {
@@ -117,6 +111,7 @@ export const useStyles = makeStyles((theme) => ({
 
   appLogo: {
     height: '75px',
+    width: '130px',
     paddingBottom: '20px',
     cursor: 'pointer',
     marginTop: '20px',

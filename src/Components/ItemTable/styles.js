@@ -5,8 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     fontFamily: 'Raleway',
     borderSpacking: '0px',
     borderCollapse: 'collapse',
-    margin: '20px',
-    marginTop: '0px',
+    margin: '0px 20px',
   },
 
   thead: {
