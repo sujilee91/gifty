@@ -15,6 +15,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const navigateToDashboard = () => history.push("/dashboard");
   return (
     <div className="login">
       <div className="login__lhs">
@@ -51,7 +52,7 @@ const Login = () => {
             variant="outlined"
           />
           <Button
-            onClick={() => login(email, password)}
+            onClick={() => login(email, password, navigateToDashboard)}
             variant="contained"
             color="primary"
             style={{

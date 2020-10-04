@@ -2,6 +2,8 @@ import firebase from "firebase";
 import { fire } from "../fire";
 import { toast } from "react-toastify";
 import { sleep } from "../utils/sleep";
+import { useHistory } from "react-router-dom";
+
 /////////////////////
 ///// FIREBASE /////
 /////////////////////
@@ -28,10 +30,11 @@ export const loginWithGoogle = () => {
     });
 };
 
-export const signUp = (email, password) => {
+export const signUp = (email, password, callback) => {
   fire
     .auth()
     .createUserWithEmailAndPassword(email, password)
+    .then(callback)
     .then(async () => {
       await sleep(500);
       toast(
@@ -43,15 +46,19 @@ export const signUp = (email, password) => {
     });
 };
 
-export const login = (email, password) => {
+export const login = (email, password, callback) => {
   fire
     .auth()
     .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      callback && callback(0);
+    })
     .catch((error) => {
       toast.error(error.message);
     });
 };
 
-export const logout = () => {
+export const logout = (callback) => {
   fire.auth().signOut();
+  callback && callback();
 };

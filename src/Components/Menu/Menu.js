@@ -1,22 +1,28 @@
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
-} from 'react-router-dom'
-import { useStyles } from './styles'
-import { Groups } from '../../Pages/Groups/Groups'
-import { User } from '../../Pages/User/User'
-import { Dashboard } from '../../Pages/Dashboard'
-import { logout } from '../../FirebaseFunctions/auth'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import EqualizerIcon from '@material-ui/icons/Equalizer'
-import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline'
-import FaceIcon from '@material-ui/icons/Face'
+} from "react-router-dom";
+import { useStyles } from "./styles";
+import { Groups } from "../../Pages/Groups/Groups";
+import { User } from "../../Pages/User/User";
+import { Dashboard } from "../../Pages/Dashboard";
+import { logout } from "../../FirebaseFunctions/auth";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import EqualizerIcon from "@material-ui/icons/Equalizer";
+import PeopleOutlineIcon from "@material-ui/icons/PeopleOutline";
+import FaceIcon from "@material-ui/icons/Face";
+import { useHistory } from "react-router-dom";
 
 export const Menu = () => {
-  const classes = useStyles()
+  const history = useHistory();
+  const classes = useStyles();
+  const handleLogout = () => {
+    logout();
+    history.push("/login");
+  };
   return (
     <div>
       <Router>
@@ -24,7 +30,7 @@ export const Menu = () => {
           <aside className={classes.sideMenuWrapper}>
             <section
               className={classes.appLogo}
-              onClick={() => window.location.assign('/')}
+              onClick={() => window.location.assign("/")}
             />
 
             <NavLink
@@ -57,7 +63,7 @@ export const Menu = () => {
                 <span>Profile</span>
               </div>
             </NavLink>
-            <a className={classes.logout} onClick={logout}>
+            <a className={classes.logout} onClick={handleLogout}>
               <div>
                 <span>Logout</span>
                 <ExitToAppIcon />
@@ -91,5 +97,5 @@ export const Menu = () => {
         </Switch>
       </Router>
     </div>
-  )
-}
+  );
+};
