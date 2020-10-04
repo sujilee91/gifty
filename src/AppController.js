@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { authListener } from "./FirebaseFunctions/auth";
 import { Signup } from "./Pages/Signup/Signup";
+import { Login } from "./Pages/Login/Login";
 import { AuthController } from "./Pages/AuthController/AuthController";
 import { UserContext } from "./Context/UserContext";
+import { Route } from "react-router-dom";
 
 const AppController = () => {
   const [user, setUser] = useState(undefined);
@@ -17,7 +19,10 @@ const AppController = () => {
   return (
     <UserContext.Provider value={user}>
       {user === undefined ? null : user === null ? (
-        <Signup />
+        <>
+          <Route exact path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+        </>
       ) : (
         <AuthController />
       )}

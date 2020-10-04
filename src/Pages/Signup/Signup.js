@@ -8,17 +8,23 @@ import TextField from "@material-ui/core/TextField";
 import "./Login.scss";
 import smallLogo from "../../Components/Menu/smallLogo.png";
 //This page is trying to look like - https://cdn.dribbble.com/users/369527/screenshots/13947179/media/30a76ca2bc03d5b09f59299ee631234b.png
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   return (
     <div className="login">
       <div className="login__lhs">
         <div className="login__lhs__topRow">
           <img src={smallLogo} style={{ height: "48px", width: "48px" }} />
-          <Button variant="outlined" color="primary">
+          <Button
+            onClick={() => history.push("/login")}
+            variant="outlined"
+            color="primary"
+          >
             Sign in
           </Button>
         </div>
@@ -71,7 +77,7 @@ const Signup = () => {
           </Button>
           <div className="login__lhs__middle--row">
             <span>Already have an account?</span>
-            <a href="www.google.ca">Sign in</a>
+            <a href="/login">Sign in</a>
           </div>
         </div>
         <div className="login__lhs__bottom">

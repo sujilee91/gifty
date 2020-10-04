@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import { fire } from "../fire";
 import { toast } from "react-toastify";
-
+import { sleep } from "../utils/sleep";
 /////////////////////
 ///// FIREBASE /////
 /////////////////////
@@ -23,21 +23,30 @@ export const loginWithGoogle = () => {
   fire
     .auth()
     .signInWithPopup(googleProvider)
-    .then(() => {
-      console.log("GOOGLE SIGNUP SUCCESS");
-    })
     .catch((error) => {
-      console.log("GOOGLE SIGNUP FAIL", error);
+      toast.error(error.message);
     });
 };
 
 export const signUp = (email, password) => {
-  console.log("$$$ - signUp", signUp);
-
   fire
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then()
+    .then(async () => {
+      await sleep(500);
+      toast(
+        "🥳 Welcome to Gifty!! Get started by creating or joining a group."
+      );
+    })
+    .catch((error) => {
+      toast.error(error.message);
+    });
+};
+
+export const login = (email, password) => {
+  fire
+    .auth()
+    .signInWithEmailAndPassword(email, password)
     .catch((error) => {
       toast.error(error.message);
     });
