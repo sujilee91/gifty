@@ -1,5 +1,5 @@
 import React from "react";
-import { loginWithGoogle, signUp } from "../../FirebaseFunctions/auth";
+import { loginWithGoogle } from "../../FirebaseFunctions/auth";
 import { useStyles } from "../styles";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
@@ -10,12 +10,12 @@ import smallLogo from "../../Components/Menu/smallLogo.png";
 //This page is trying to look like - https://cdn.dribbble.com/users/369527/screenshots/13947179/media/30a76ca2bc03d5b09f59299ee631234b.png
 import { Formik } from "formik";
 
-const Login = () => {
+const Signup = () => {
   return (
     <div className="login">
       <div className="login__lhs">
         <div className="login__lhs__topRow">
-          <img src={smallLogo} />
+          <img src={smallLogo} style={{ height: "48px", width: "48px" }} />
           <Button variant="outlined" color="primary">
             Sign in
           </Button>
@@ -39,7 +39,6 @@ const Login = () => {
             variant="outlined"
           />
           <Button
-            onClick={() => signUp("kappaross@mac.com", "freebaby1")}
             variant="contained"
             color="primary"
             style={{
@@ -91,4 +90,4 @@ const Login = () => {
   );
 };
 
-export { Login };
+export { Signup };

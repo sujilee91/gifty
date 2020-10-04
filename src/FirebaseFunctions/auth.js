@@ -1,5 +1,6 @@
-import firebase from 'firebase'
-import { fire } from '../fire'
+import firebase from "firebase";
+import { fire } from "../fire";
+import { toast } from "react-toastify";
 
 /////////////////////
 ///// FIREBASE /////
@@ -13,23 +14,35 @@ import { fire } from '../fire'
 
 export const authListener = (callback) => {
   fire.auth().onAuthStateChanged((user) => {
-    callback(user)
-  })
-}
+    callback(user);
+  });
+};
 
 export const loginWithGoogle = () => {
-  const googleProvider = new firebase.auth.GoogleAuthProvider()
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
   fire
     .auth()
     .signInWithPopup(googleProvider)
     .then(() => {
-      console.log('GOOGLE SIGNUP SUCCESS')
+      console.log("GOOGLE SIGNUP SUCCESS");
     })
     .catch((error) => {
-      console.log('GOOGLE SIGNUP FAIL', error)
-    })
-}
+      console.log("GOOGLE SIGNUP FAIL", error);
+    });
+};
+
+export const signUp = (email, password) => {
+  console.log("$$$ - signUp", signUp);
+
+  fire
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then()
+    .catch((error) => {
+      toast.error(error.message);
+    });
+};
 
 export const logout = () => {
-  fire.auth().signOut()
-}
+  fire.auth().signOut();
+};

@@ -7,9 +7,12 @@ import * as serviceWorker from "./serviceWorker";
 import { AppController } from "./AppController";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./theme";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <ToastContainer />
     <Router history={createBrowserHistory()}>
       <Route path="/" component={AppController} />
     </Router>

@@ -12,6 +12,7 @@
     "apollo-server-express": "^2.15.1",
     "express": "^4.17.1",
     "firebase": "^7.16.0",
+    "formik": "^2.1.7",
     "graphql": "^15.3.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -19,6 +20,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-toastify": "^6.0.8",
     "uuidv4": "^6.2.3"
   },
   "scripts": {
