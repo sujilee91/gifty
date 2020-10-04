@@ -2,7 +2,6 @@ import firebase from "firebase";
 import { fire } from "../fire";
 import { toast } from "react-toastify";
 import { sleep } from "../utils/sleep";
-import { useHistory } from "react-router-dom";
 
 /////////////////////
 ///// FIREBASE /////
