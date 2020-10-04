@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { authListener } from "./FirebaseFunctions/auth";
-import { Login } from "./Pages/Login/Login";
+import { Signup } from "./Pages/Signup/Signup";
 import { AuthController } from "./Pages/AuthController/AuthController";
 import { UserContext } from "./Context/UserContext";
 
@@ -17,7 +17,7 @@ const AppController = () => {
   return (
     <UserContext.Provider value={user}>
       {user === undefined ? null : user === null ? (
-        <Login />
+        <Signup />
       ) : (
         <AuthController />
       )}

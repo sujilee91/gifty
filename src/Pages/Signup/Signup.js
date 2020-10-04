@@ -1,5 +1,5 @@
-import React from "react";
-import { loginWithGoogle } from "../../FirebaseFunctions/auth";
+import React, { useState } from "react";
+import { loginWithGoogle, signUp } from "../../FirebaseFunctions/auth";
 import { useStyles } from "../styles";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
@@ -8,9 +8,11 @@ import TextField from "@material-ui/core/TextField";
 import "./Login.scss";
 import smallLogo from "../../Components/Menu/smallLogo.png";
 //This page is trying to look like - https://cdn.dribbble.com/users/369527/screenshots/13947179/media/30a76ca2bc03d5b09f59299ee631234b.png
-import { Formik } from "formik";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="login">
       <div className="login__lhs">
@@ -26,12 +28,15 @@ const Signup = () => {
             Create an account
           </span>
           <TextField
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             style={{ width: "100%", margin: "8px 0px" }}
             id="outlined-basic"
             label="Email Address"
             variant="outlined"
           />
           <TextField
+            onChange={(e) => setPassword(e.target.value)}
             style={{ width: "100%", margin: "8px 0px" }}
             id="outlined-basic"
             label="Password"
@@ -39,6 +44,7 @@ const Signup = () => {
             variant="outlined"
           />
           <Button
+            onClick={() => signUp(email, password)}
             variant="contained"
             color="primary"
             style={{
